@@ -15,7 +15,7 @@ namespace LibraryProject.Structure
         private string id;
         private string password;
         private List<Book> borrows;
-        private DateTime overdue;
+        private int overdue;
 
         /// <summary>
         /// 도서관 이용자를 생성하는 생성자입니다.
@@ -29,7 +29,7 @@ namespace LibraryProject.Structure
             this.id = id;
             this.password = password;
             this.borrows = new List<Book>();
-            this.overdue = DateTime.Today;
+            this.overdue = 0;
         }
 
         /// <summary>
@@ -53,8 +53,8 @@ namespace LibraryProject.Structure
         public List<Book> Borrows { get => this.borrows; }
 
         /// <summary>
-        /// 이용자의 연체 일자이며, 연체되지 않았다면 값은 오늘입니다.
+        /// 이용자의 연체 일자이며, 연체되지 않았다면 값은 0입니다.
         /// </summary>
-        public DateTime Overdue { get => this.overdue; set => this.overdue = value; }
+        public int Overdue { get => this.overdue; set => this.overdue = value; }
     }
 }

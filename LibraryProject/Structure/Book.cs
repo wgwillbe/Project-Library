@@ -17,6 +17,7 @@ namespace LibraryProject.Structure
         private string book_code;
         private string barcode;
         private User borrower;
+        private int days;
 
         /// <summary>
         /// 책의 정보를 생성하는 생성자입니다.
@@ -64,5 +65,10 @@ namespace LibraryProject.Structure
         /// 현재 책을 빌린 사람입니다. 만약 책이 도서관에 있다면 null입니다.
         /// </summary>
         public User Brorrower { get => this.borrower; set => this.borrower = value; }
+
+        /// <summary>
+        /// 책을 빌린 기한이며, 시간이 지날수록 줄어듭니다. 책이 대출 상태가 아닐 시 -1이 됩니다.
+        /// </summary>
+        public int Days { get => this.days; set => this.days = value; }
     }
 }
