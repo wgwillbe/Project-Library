@@ -49,6 +49,7 @@ namespace LibraryProject.Classes
                     Overdue = int.Parse(usersheet.Cells[r, 5].Value.ToString()),
                     Borrows = (usersheet.Cells[r, 6].Value.ToString() as string).Split('/').ToList(),
                 });
+                this.users[r - 1].Borrows.RemoveAt(this.users[r - 1].Borrows.Count - 1);
             }
 
             for (int r = 1; r <= booksheet.UsedRange.Rows.Count; r++)

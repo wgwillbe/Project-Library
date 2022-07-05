@@ -38,7 +38,7 @@ namespace LibraryProject.Controls
 
             if (book != null)
             {
-                base.Text += "책: " + book.Title + "; " + book.Description + "\r\n";
+                base.Text = "책: " + book.Title + "; " + book.Description + "\r\n";
 
                 base.Text += "저자: " + book.Author + "\r\n";
 

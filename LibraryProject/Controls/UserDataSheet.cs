@@ -38,7 +38,7 @@ namespace LibraryProject.Controls
 
             if (user != null)
             {
-                base.Text += "이름: " + user.Name + "\r\n";
+                base.Text = "이름: " + user.Name + "\r\n";
 
                 base.Text += "아이디: " + user.ID + "\r\n";
 
