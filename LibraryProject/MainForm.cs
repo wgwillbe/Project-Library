@@ -15,8 +15,6 @@ namespace LibraryProject
         public MainForm()
         {
             InitializeComponent();
-
-            new Structure.Library(@"C:\Users\tkvkf\source\repos\cs-wave\LibraryProject\LibraryProject\bin\Debug\excel.xlsx");
         }
     }
 }
