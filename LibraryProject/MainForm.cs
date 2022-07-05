@@ -37,6 +37,13 @@ namespace LibraryProject
             //};
             //book.FindBook("200001");
 
+            //bookDataSheet1.Library = new Structure.Library(@"C:\Users\tkvkf\source\repos\cs-wave\LibraryProject\LibraryProject\bin\Debug\excel.xlsx");
+            //bookDataSheet1.FindBook("200001");
+
+            //Classes.Library lib = new Classes.Library(@"C:\Users\tkvkf\source\repos\cs-wave\LibraryProject\LibraryProject\bin\Debug\excel.xlsx");
+            //lib.Books.RemoveAt(1);
+            //lib.SaveData();
+
             /*
              * 만들거
              * 대출

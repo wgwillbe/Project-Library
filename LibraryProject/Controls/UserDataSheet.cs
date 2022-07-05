@@ -10,22 +10,23 @@ namespace LibraryProject.Controls
     /// <summary>
     /// 유저의 정보를 표현하는 텍스트입니다.
     /// </summary>
-    internal class UserDataSheet : Label
+    internal class UserDataSheet : TextBox
     {
-        private Structure.Library library;
+        private Classes.Library library;
 
         /// <summary>
         /// 컨트롤의 기본 생성자입니다.
         /// </summary>
         public UserDataSheet() : base()
         {
-            base.AutoSize = true;
+            base.ReadOnly = true;
+            base.Multiline = true;
         }
 
         /// <summary>
         /// 이용자를 검색할 도서관 시스템 정보입니다.
         /// </summary>
-        public Structure.Library Library { get => this.library; set => this.library = value; }
+        public Classes.Library Library { get => this.library; set => this.library = value; }
 
         /// <summary>
         /// 바코드를 사용해 이용자를 찾습니다.
@@ -33,7 +34,8 @@ namespace LibraryProject.Controls
         /// <param name="barcode"> 찾을 이용자의 바코드입니다. </param>
         public void FindUser(string barcode)
         {
-            Structure.User user = this.library.FindUser(barcode);
+            Classes.User user = this.library.FindUser(barcode);
+
             if (user != null)
             {
                 base.Text += "이름: " + user.Name + "\r\n";
@@ -52,7 +54,7 @@ namespace LibraryProject.Controls
                 base.Text += "대출한 도서" + "\r\n";
                 for (int i = 0; i < user.Borrows.Count; i++)
                 {
-                    Structure.Book book = this.library.FindBook(user.Borrows[i]);
+                    Classes.Book book = this.library.FindBook(user.Borrows[i]);
                     base.Text += $" - {book.Title}; {book.Author} 저: {book.BookCode}" + "\r\n";
                 }
             }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryProject.Structure
+namespace LibraryProject.Classes
 {
     /// <summary>
     /// 도서관 이용자의 정보를 담은 클래스입니다.
