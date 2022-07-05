@@ -13,8 +13,6 @@ namespace LibraryProject.Structure
     /// </summary>
     internal class Library
     {
-        private const int TITLE = 1, DESCRIPTION = 2, AUTHOR = 3, BOOKCODE = 4, BARCODE = 5;
-
         private List<Book> books;
         private List<User> users;
 
@@ -58,7 +56,7 @@ namespace LibraryProject.Structure
                     BookCode = booksheet.Cells[r, 4].Value.ToString(),
                     Barcode = booksheet.Cells[r, 5].Value.ToString(),
                     Days = int.Parse(booksheet.Cells[r, 6].Value.ToString()),
-                    Brorrower = booksheet.Cells[r, 7].Value.ToString(),
+                    Borrower = booksheet.Cells[r, 7].Value.ToString(),
                 });
             }
 
@@ -99,6 +97,63 @@ namespace LibraryProject.Structure
         public User FindUser(string barcode)
         {
             return this.users.Find((x) => { return x.Barcode == barcode; });
+        }
+
+        /// <summary>
+        /// 이용자가 책을 빌리기 위해 시도합니다.
+        /// </summary>
+        /// <param name="user"> 책을 빌릴 이용자입니다. </param>
+        /// <param name="book"> 빌릴 책입니다. </param>
+        /// <returns> 이용자가 여러 사유로 책을 빌리지 못했다면 거짓, 빌렸다면 참을 반환합니다. </returns>
+        public bool BorrowBook(User user, Book book)
+        {
+            if (book.Borrower == null && user.Overdue == 0)
+            {
+                user.Borrows.Add(book.Barcode);
+                book.Borrower = user.Barcode;
+                book.Days = 0;
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 빌린 책을 반납합니다.
+        /// </summary>
+        /// <param name="user"> 책을 반납하는 이용자입니다. </param>
+        /// <param name="book"> 반납할 도서입니다. </param>
+        public void GiveBack(User user, Book book)
+        {
+            user.Overdue = Math.Max(book.Days - this.max_days, 0);
+
+            user.Borrows.Remove(book.Barcode);
+            book.Borrower = null;
+            book.Days = -1;
+        }
+
+        /// <summary>
+        /// 테스트를 위해, 하루를 진행합니다.
+        /// </summary>
+        public void AddDay()
+        {
+            for (int i = 0; i < this.books.Count; i++)
+            {
+                if (this.books[i].Days != -1) 
+                {
+                    this.books[i].Days++; 
+                }
+            }
+            for (int i = 0; i <this.users.Count; i++)
+            {
+                if (this.users[i].Overdue > 0)
+                {
+                    this.users[i].Overdue--;
+                }
+            }
         }
     }
 }

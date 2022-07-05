@@ -65,7 +65,7 @@ namespace LibraryProject.Structure
         /// <summary>
         /// 현재 책을 빌린 사람의 바코드입니다. 만약 책이 도서관에 있다면 null입니다.
         /// </summary>
-        public string Brorrower { get => this.borrower; set => this.borrower = value; }
+        public string Borrower { get => this.borrower; set => this.borrower = value; }
 
         /// <summary>
         /// 책을 빌린 기한이며, 시간이 지날수록 증가합니다. 책이 대출 상태가 아닐 시 -1이 됩니다.
