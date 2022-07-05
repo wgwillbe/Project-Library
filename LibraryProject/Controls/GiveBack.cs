@@ -8,9 +8,9 @@ using System.Windows.Forms;
 namespace LibraryProject.Controls
 {
     /// <summary>
-    /// 책을 빌리는 버튼입니다.
+    /// 책을 반납하는 버튼입니다.
     /// </summary>
-    internal class Borrow : Button
+    internal class GiveBack : Button
     {
         private Classes.Library library;
         private Classes.User user;
@@ -19,12 +19,12 @@ namespace LibraryProject.Controls
         /// <summary>
         /// 컨트롤의 기본 생성자입니다.
         /// </summary>
-        public Borrow() : base()
+        public GiveBack() : base()
         {
-            base.Text = "대출하기";
+            base.Text = "반납하기";
             base.Click += (sender, e) =>
             {
-                this.library.Borrow(this.user, this.book);
+                this.library.GiveBack(this.user, this.book);
             };
         }
 
@@ -37,7 +37,7 @@ namespace LibraryProject.Controls
         /// 책을 빌리는 이용자입니다.
         /// </summary>
         public Classes.User User { get => this.user; set => this.user = value; }
-    
+
         /// <summary>
         /// 빌릴 도서입니다.
         /// </summary>

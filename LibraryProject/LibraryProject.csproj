@@ -60,6 +60,9 @@
     <Compile Include="Controls\Borrow.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\GiveBack.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\UserDataSheet.cs">
       <SubType>Component</SubType>
     </Compile>
