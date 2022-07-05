@@ -63,7 +63,7 @@ namespace LibraryProject.Structure
         public string Barcode { get => this.barcode; set => this.barcode = value; }
 
         /// <summary>
-        /// 현재 책을 빌린 사람의 바코드입니다. 만약 책이 도서관에 있다면 null입니다.
+        /// 현재 책을 빌린 사람의 바코드입니다. 만약 책이 도서관에 있다면 값은 "library"입니다.
         /// </summary>
         public string Borrower { get => this.borrower; set => this.borrower = value; }
 

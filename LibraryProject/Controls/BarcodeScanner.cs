@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace LibraryProject.Controls
 {
     /// <summary>
-    /// RichTextBox를 상속받는 BarcodeScanner 컨트롤입니다.
+    /// 숫자만을 입력받도록 설계된 바코드 입력 칸입니다.
     /// </summary>
     internal class BarcodeScanner : RichTextBox
     {
@@ -17,7 +17,17 @@ namespace LibraryProject.Controls
         /// </summary>
         public BarcodeScanner() : base()
         {
-
+            base.TextChanged += (sender, e) =>
+            {
+                for (int i = 0; i < (sender as RichTextBox).Text.Length; i++)
+                {
+                    if ((sender as RichTextBox).Text[i] < '0' || (sender as RichTextBox).Text[i] > '9')
+                    {
+                        (sender as RichTextBox).Text = (sender as RichTextBox).Text.Remove(i, 1);
+                        (sender as RichTextBox).SelectionStart = i;
+                    }
+                }
+            };
         }
     }
 }

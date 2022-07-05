@@ -17,6 +17,7 @@ namespace LibraryProject.Structure
         private List<User> users;
 
         private int max_days;
+        private int max_books;
 
         /// <summary>
         /// 도서관 시스템을 생성하는 생성자입니다.
@@ -70,6 +71,11 @@ namespace LibraryProject.Structure
         public int MaxDays { get => this.max_days; set => this.max_days = value; }
 
         /// <summary>
+        /// 도서관에서 한 번에 빌릴 수 있는 최대 도서의 수 입니다.
+        /// </summary>
+        public int MaxBooks { get => this.max_books; set => this.max_books = value; }
+
+        /// <summary>
         /// 유저의 정보가 담긴 리스트입니다.
         /// </summary>
         public List<User> Users { get => this.users; }
@@ -107,7 +113,7 @@ namespace LibraryProject.Structure
         /// <returns> 이용자가 여러 사유로 책을 빌리지 못했다면 거짓, 빌렸다면 참을 반환합니다. </returns>
         public bool BorrowBook(User user, Book book)
         {
-            if (book.Borrower == null && user.Overdue == 0)
+            if (book.Borrower == null && user.Overdue == 0 && user.Borrows.Count < this.max_books)
             {
                 user.Borrows.Add(book.Barcode);
                 book.Borrower = user.Barcode;
