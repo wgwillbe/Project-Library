@@ -12,7 +12,7 @@ namespace Library
 {
     public partial class MainForm : Form
     {
-        private Classes.Library library = new Classes.Library(@"C:\Users\tkvkf\source\repos\cs-wave\Project-Library\Project-Library\bin\Debug\excel.xlsx")
+        private Classes.Library library = new Classes.Library(@"\excel.xlsx")
         {
             MaxDays = 7,
             MaxBooks = 3,

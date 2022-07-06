@@ -33,7 +33,7 @@ namespace Library.Classes
             this.users = new List<User>();
 
             Excel.Application app = new Excel.Application();
-            Excel.Workbook workbook = app.Workbooks.Open(path);
+            Excel.Workbook workbook = app.Workbooks.Open(Environment.CurrentDirectory + path);
 
             Excel.Worksheet usersheet = workbook.Worksheets[1];
             Excel.Worksheet booksheet = workbook.Worksheets[2];
