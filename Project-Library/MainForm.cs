@@ -16,6 +16,7 @@ namespace Library
         {
             InitializeComponent();
 
+            this.Icon = Properties.Resources.OpenBook;
             this.Text = "내 손으로 코딩하는 작은 도서관";
             this.Font = new Font("Verdana", 11, FontStyle.Regular);
             this.Width = 1100;
