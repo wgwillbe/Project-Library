@@ -49,7 +49,7 @@ namespace Library.Classes
         public string Password { get => this.password; set => this.password = value; }
 
         /// <summary>
-        /// 이용자가 빌린 도서의 바코드 정보입니다.
+        /// 이용자가 빌린 도서의 바코드 정보이며, 책을 빌리지 않았다면 "null"입니다.
         /// </summary>
         public List<string> Borrows { get => this.borrows; set => this.borrows = value; }
 
