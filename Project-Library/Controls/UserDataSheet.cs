@@ -55,7 +55,11 @@ namespace Library.Controls
                 for (int i = 0; i < user.Borrows.Count; i++)
                 {
                     Classes.Book book = this.library.FindBook(user.Borrows[i]);
-                    base.Text += $" - {book.Title}; {book.Author} 저: {book.BookCode}" + "\r\n";
+
+                    if (book != null)
+                    {
+                        base.Text += $" - {book.Title}; {book.Author} 저: {book.BookCode}" + "\r\n";
+                    }
                 }
             }
         }

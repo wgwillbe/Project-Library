@@ -42,12 +42,14 @@ namespace Library.Classes
             {
                 this.users.Add(new User()
                 {
-                    Name = usersheet.Cells[r, 1].Value.ToString(),
-                    ID = usersheet.Cells[r, 2].Value.ToString(),
-                    Password = usersheet.Cells[r, 3].Value.ToString(),
-                    Barcode = usersheet.Cells[r, 4].Value.ToString(),
-                    Overdue = int.Parse(usersheet.Cells[r, 5].Value.ToString()),
-                    Borrows = (usersheet.Cells[r, 6].Value.ToString() as string).Split('/').ToList(),
+                    Name = usersheet.Cells[r, 1].Value2.ToString(),
+                    ID = usersheet.Cells[r, 2].Value2.ToString(),
+                    Password = usersheet.Cells[r, 3].Value2.ToString(),
+                    Barcode = usersheet.Cells[r, 4].Value2.ToString(),
+                    Overdue = int.Parse(usersheet.Cells[r, 5].Value2.ToString()),
+                    Borrows = usersheet.Cells[r, 6].Value2.ToString() == "null" ? 
+                        new List<string> { "" } : 
+                        ((string)usersheet.Cells[r, 6].Value2.ToString()).Split('/').ToList(),
                 });
                 this.users[r - 1].Borrows.RemoveAt(this.users[r - 1].Borrows.Count - 1);
             }
@@ -56,13 +58,14 @@ namespace Library.Classes
             {
                 this.books.Add(new Book()
                 {
-                    Title = booksheet.Cells[r, 1].Value.ToString(),
-                    Description = booksheet.Cells[r, 2].Value.ToString(),
-                    Author = booksheet.Cells[r, 3].Value.ToString(),
-                    BookCode = booksheet.Cells[r, 4].Value.ToString(),
-                    Barcode = booksheet.Cells[r, 5].Value.ToString(),
-                    Days = int.Parse(booksheet.Cells[r, 6].Value.ToString()),
-                    Borrower = booksheet.Cells[r, 7].Value.ToString(),
+                    Title = booksheet.Cells[r, 1].Value2.ToString(),
+                    Description = booksheet.Cells[r, 2].Value2.ToString(),
+                    Author = booksheet.Cells[r, 3].Value2.ToString(),
+                    BookCode = booksheet.Cells[r, 4].Value2.ToString(),
+                    Barcode = booksheet.Cells[r, 5].Value2.ToString(),
+                    Days = int.Parse(booksheet.Cells[r, 6].Value2.ToString()),
+                    Borrower = booksheet.Cells[r, 7].Value2.ToString() == "library" ? 
+                        null : booksheet.Cells[r, 7].Value2.ToString(),
                 });
             }
 
@@ -197,6 +200,10 @@ namespace Library.Classes
                 {
                     str += this.users[r].Borrows[i] + "/";
                 }
+                if (this.users[r].Borrows.Count == 0)
+                {
+                    str += "null";
+                }
                 usersheet.Cells[r + 1, 6] = str;
             }
 
@@ -209,6 +216,10 @@ namespace Library.Classes
                 booksheet.Cells[r + 1, 5] = this.books[r].Barcode;
                 booksheet.Cells[r + 1, 6] = this.books[r].Days;
                 booksheet.Cells[r + 1, 7] = this.books[r].Borrower;
+                if (this.books[r].Borrower == null)
+                {
+                    booksheet.Cells[r + 1, 7] = "library";
+                }
             }
 
             workbook.Save();

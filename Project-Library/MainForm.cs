@@ -75,5 +75,10 @@ namespace Library
             ChangeBookBarcode(this.book_barcode, e);
             ChangeUserBarcode(this.user_barcode, e);
         }
+
+        private void ClickSave(object sender, EventArgs e)
+        {
+            this.library.SaveData();
+        }
     }
 }

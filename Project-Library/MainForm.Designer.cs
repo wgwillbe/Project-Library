@@ -35,6 +35,7 @@
             this.borrow = new System.Windows.Forms.Button();
             this.give_back = new System.Windows.Forms.Button();
             this.add_day = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // user_barcode
@@ -105,9 +106,20 @@
             this.add_day.UseVisualStyleBackColor = true;
             this.add_day.Click += new System.EventHandler(this.ClickAddDay);
             // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(440, 194);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(162, 36);
+            this.Save.TabIndex = 3;
+            this.Save.Text = "저장";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.ClickSave);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(669, 409);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.add_day);
             this.Controls.Add(this.give_back);
             this.Controls.Add(this.borrow);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.Button borrow;
         private System.Windows.Forms.Button give_back;
         private System.Windows.Forms.Button add_day;
+        private System.Windows.Forms.Button Save;
     }
 }
 
