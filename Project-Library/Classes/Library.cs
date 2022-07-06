@@ -180,7 +180,7 @@ namespace Library.Classes
         public void SaveData()
         {
             Excel.Application app = new Excel.Application();
-            Excel.Workbook workbook = app.Workbooks.Open(this.path);
+            Excel.Workbook workbook = app.Workbooks.Open(Environment.CurrentDirectory + this.path);
 
             Excel.Worksheet usersheet = workbook.Worksheets[1];
             Excel.Worksheet booksheet = workbook.Worksheets[2];
