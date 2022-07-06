@@ -7,7 +7,7 @@
     <ProjectGuid>{78B9178B-6F87-4C38-85C2-B0AD470CF723}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>LibraryProject</RootNamespace>
-    <AssemblyName>LibraryProject</AssemblyName>
+    <AssemblyName>Library</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryProject.Controls
+namespace Library.Controls
 {
     /// <summary>
     /// 책의 정보를 표현하는 텍스트입니다.

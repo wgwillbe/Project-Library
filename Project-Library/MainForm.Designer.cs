@@ -1,4 +1,4 @@
-﻿namespace LibraryProject
+﻿namespace Library
 {
     partial class MainForm
     {

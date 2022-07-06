@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryProject.Classes
+namespace Library.Classes
 {
     /// <summary>
     /// 책의 정보를 담은 클래스입니다.

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryProject.Controls
+namespace Library.Controls
 {
     /// <summary>
     /// 숫자만을 입력받도록 설계된 바코드 입력 칸입니다.

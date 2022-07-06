@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace LibraryProject.Classes
+namespace Library.Classes
 {
     /// <summary>
     /// 도서관의 메인 중앙 시스템 정보 클래스입니다.

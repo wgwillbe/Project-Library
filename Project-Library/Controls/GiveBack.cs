@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryProject.Controls
+namespace Library.Controls
 {
     /// <summary>
     /// 책을 반납하는 버튼입니다.
