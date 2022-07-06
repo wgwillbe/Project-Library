@@ -28,101 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barcodeScanner1 = new Library.Controls.BarcodeScanner();
-            this.bookDataSheet1 = new Library.Controls.BookDataSheet();
-            this.userDataSheet1 = new Library.Controls.UserDataSheet();
-            this.barcodeScanner2 = new Library.Controls.BarcodeScanner();
-            this.borrow1 = new Library.Controls.Borrow();
-            this.giveBack1 = new Library.Controls.GiveBack();
-            this.button1 = new System.Windows.Forms.Button();
+            this.user_barcode = new Library.Controls.BarcodeScanner();
+            this.book_barcode = new Library.Controls.BarcodeScanner();
+            this.user_data = new Library.Controls.UserDataSheet();
+            this.book_data = new Library.Controls.BookDataSheet();
+            this.borrow = new System.Windows.Forms.Button();
+            this.give_back = new System.Windows.Forms.Button();
+            this.add_day = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // barcodeScanner1
+            // user_barcode
             // 
-            this.barcodeScanner1.Location = new System.Drawing.Point(37, 209);
-            this.barcodeScanner1.Name = "barcodeScanner1";
-            this.barcodeScanner1.Size = new System.Drawing.Size(143, 50);
-            this.barcodeScanner1.TabIndex = 0;
-            this.barcodeScanner1.Text = "";
-            this.barcodeScanner1.TextChanged += new System.EventHandler(this.barcodeScanner1_TextChanged);
+            this.user_barcode.Location = new System.Drawing.Point(12, 278);
+            this.user_barcode.Name = "user_barcode";
+            this.user_barcode.Size = new System.Drawing.Size(208, 31);
+            this.user_barcode.TabIndex = 0;
+            this.user_barcode.Text = "";
+            this.user_barcode.TextChanged += new System.EventHandler(this.ChangeUserBarcode);
             // 
-            // bookDataSheet1
+            // book_barcode
             // 
-            this.bookDataSheet1.Library = null;
-            this.bookDataSheet1.Location = new System.Drawing.Point(37, 12);
-            this.bookDataSheet1.Multiline = true;
-            this.bookDataSheet1.Name = "bookDataSheet1";
-            this.bookDataSheet1.ReadOnly = true;
-            this.bookDataSheet1.Size = new System.Drawing.Size(129, 166);
-            this.bookDataSheet1.TabIndex = 1;
+            this.book_barcode.Location = new System.Drawing.Point(226, 278);
+            this.book_barcode.Name = "book_barcode";
+            this.book_barcode.Size = new System.Drawing.Size(208, 31);
+            this.book_barcode.TabIndex = 0;
+            this.book_barcode.Text = "";
+            this.book_barcode.TextChanged += new System.EventHandler(this.ChangeBookBarcode);
             // 
-            // userDataSheet1
+            // user_data
             // 
-            this.userDataSheet1.Library = null;
-            this.userDataSheet1.Location = new System.Drawing.Point(191, 17);
-            this.userDataSheet1.Multiline = true;
-            this.userDataSheet1.Name = "userDataSheet1";
-            this.userDataSheet1.ReadOnly = true;
-            this.userDataSheet1.Size = new System.Drawing.Size(144, 161);
-            this.userDataSheet1.TabIndex = 2;
+            this.user_data.Library = null;
+            this.user_data.Location = new System.Drawing.Point(12, 12);
+            this.user_data.Multiline = true;
+            this.user_data.Name = "user_data";
+            this.user_data.ReadOnly = true;
+            this.user_data.Size = new System.Drawing.Size(208, 260);
+            this.user_data.TabIndex = 1;
             // 
-            // barcodeScanner2
+            // book_data
             // 
-            this.barcodeScanner2.Location = new System.Drawing.Point(200, 209);
-            this.barcodeScanner2.Name = "barcodeScanner2";
-            this.barcodeScanner2.Size = new System.Drawing.Size(135, 38);
-            this.barcodeScanner2.TabIndex = 3;
-            this.barcodeScanner2.Text = "";
-            this.barcodeScanner2.TextChanged += new System.EventHandler(this.barcodeScanner2_TextChanged);
+            this.book_data.Library = null;
+            this.book_data.Location = new System.Drawing.Point(226, 12);
+            this.book_data.Multiline = true;
+            this.book_data.Name = "book_data";
+            this.book_data.ReadOnly = true;
+            this.book_data.Size = new System.Drawing.Size(208, 260);
+            this.book_data.TabIndex = 2;
             // 
-            // borrow1
+            // borrow
             // 
-            this.borrow1.Book = null;
-            this.borrow1.Library = null;
-            this.borrow1.Location = new System.Drawing.Point(404, 26);
-            this.borrow1.Name = "borrow1";
-            this.borrow1.Size = new System.Drawing.Size(110, 59);
-            this.borrow1.TabIndex = 4;
-            this.borrow1.Text = "borrow1";
-            this.borrow1.User = null;
-            this.borrow1.UseVisualStyleBackColor = true;
+            this.borrow.Location = new System.Drawing.Point(440, 12);
+            this.borrow.Name = "borrow";
+            this.borrow.Size = new System.Drawing.Size(164, 38);
+            this.borrow.TabIndex = 3;
+            this.borrow.Text = "대출";
+            this.borrow.UseVisualStyleBackColor = true;
+            this.borrow.Click += new System.EventHandler(this.ClickBorrow);
             // 
-            // giveBack1
+            // give_back
             // 
-            this.giveBack1.Book = null;
-            this.giveBack1.Library = null;
-            this.giveBack1.Location = new System.Drawing.Point(404, 118);
-            this.giveBack1.Name = "giveBack1";
-            this.giveBack1.Size = new System.Drawing.Size(97, 41);
-            this.giveBack1.TabIndex = 5;
-            this.giveBack1.Text = "giveBack1";
-            this.giveBack1.User = null;
-            this.giveBack1.UseVisualStyleBackColor = true;
+            this.give_back.Location = new System.Drawing.Point(440, 56);
+            this.give_back.Name = "give_back";
+            this.give_back.Size = new System.Drawing.Size(162, 36);
+            this.give_back.TabIndex = 3;
+            this.give_back.Text = "반납";
+            this.give_back.UseVisualStyleBackColor = true;
+            this.give_back.Click += new System.EventHandler(this.ClickGiveBack);
             // 
-            // button1
+            // add_day
             // 
-            this.button1.Location = new System.Drawing.Point(515, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 60);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.add_day.Location = new System.Drawing.Point(440, 236);
+            this.add_day.Name = "add_day";
+            this.add_day.Size = new System.Drawing.Size(162, 36);
+            this.add_day.TabIndex = 3;
+            this.add_day.Text = "날짜+";
+            this.add_day.UseVisualStyleBackColor = true;
+            this.add_day.Click += new System.EventHandler(this.ClickAddDay);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.giveBack1);
-            this.Controls.Add(this.borrow1);
-            this.Controls.Add(this.barcodeScanner2);
-            this.Controls.Add(this.userDataSheet1);
-            this.Controls.Add(this.bookDataSheet1);
-            this.Controls.Add(this.barcodeScanner1);
+            this.ClientSize = new System.Drawing.Size(669, 409);
+            this.Controls.Add(this.add_day);
+            this.Controls.Add(this.give_back);
+            this.Controls.Add(this.borrow);
+            this.Controls.Add(this.book_data);
+            this.Controls.Add(this.user_data);
+            this.Controls.Add(this.book_barcode);
+            this.Controls.Add(this.user_barcode);
             this.Name = "MainForm";
-            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,13 +123,13 @@
 
         #endregion
 
-        private Controls.BarcodeScanner barcodeScanner1;
-        private Controls.BookDataSheet bookDataSheet1;
-        private Controls.UserDataSheet userDataSheet1;
-        private Controls.BarcodeScanner barcodeScanner2;
-        private Controls.Borrow borrow1;
-        private Controls.GiveBack giveBack1;
-        private System.Windows.Forms.Button button1;
+        private Controls.BarcodeScanner user_barcode;
+        private Controls.BarcodeScanner book_barcode;
+        private Controls.UserDataSheet user_data;
+        private Controls.BookDataSheet book_data;
+        private System.Windows.Forms.Button borrow;
+        private System.Windows.Forms.Button give_back;
+        private System.Windows.Forms.Button add_day;
     }
 }
 

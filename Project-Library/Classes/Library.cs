@@ -139,8 +139,6 @@ namespace Library.Classes
         /// <param name="book"> 반납할 도서입니다. </param>
         public void GiveBack(User user, Book book)
         {
-            user.Overdue = Math.Max(book.Days - this.max_days, 0);
-
             user.Borrows.Remove(book.Barcode);
             book.Borrower = null;
             book.Days = -1;
@@ -156,11 +154,17 @@ namespace Library.Classes
                 if (this.books[i].Days != -1) 
                 {
                     this.books[i].Days++; 
+
+                    if (this.books[i].Days > this.max_days)
+                    {
+                        FindUser(this.books[i].Borrower).Overdue++;
+                    }
                 }
             }
+
             for (int i = 0; i <this.users.Count; i++)
             {
-                if (this.users[i].Overdue > 0)
+                if (this.users[i].Overdue > 0 && this.users[i].Borrows.Count == 0)
                 {
                     this.users[i].Overdue--;
                 }
