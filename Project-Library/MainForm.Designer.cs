@@ -31,16 +31,26 @@
             this.user_barcode = new Library.Controls.BarcodeScanner();
             this.book_barcode = new Library.Controls.BarcodeScanner();
             this.user_data = new Library.Controls.UserDataSheet();
-            this.book_data = new Library.Controls.BookDataSheet();
+            this.book_data1 = new Library.Controls.BookDataSheet();
             this.borrow = new System.Windows.Forms.Button();
             this.give_back = new System.Windows.Forms.Button();
             this.add_day = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
+            this.book_tab = new System.Windows.Forms.TabControl();
+            this.page1 = new System.Windows.Forms.TabPage();
+            this.page2 = new System.Windows.Forms.TabPage();
+            this.book_data2 = new Library.Controls.BookDataSheet();
+            this.page3 = new System.Windows.Forms.TabPage();
+            this.book_data3 = new Library.Controls.BookDataSheet();
+            this.book_tab.SuspendLayout();
+            this.page1.SuspendLayout();
+            this.page2.SuspendLayout();
+            this.page3.SuspendLayout();
             this.SuspendLayout();
             // 
             // user_barcode
             // 
-            this.user_barcode.Location = new System.Drawing.Point(12, 278);
+            this.user_barcode.Location = new System.Drawing.Point(12, 328);
             this.user_barcode.Name = "user_barcode";
             this.user_barcode.Size = new System.Drawing.Size(208, 31);
             this.user_barcode.TabIndex = 0;
@@ -49,7 +59,7 @@
             // 
             // book_barcode
             // 
-            this.book_barcode.Location = new System.Drawing.Point(226, 278);
+            this.book_barcode.Location = new System.Drawing.Point(226, 328);
             this.book_barcode.Name = "book_barcode";
             this.book_barcode.Size = new System.Drawing.Size(208, 31);
             this.book_barcode.TabIndex = 0;
@@ -59,26 +69,26 @@
             // user_data
             // 
             this.user_data.Library = null;
-            this.user_data.Location = new System.Drawing.Point(12, 12);
+            this.user_data.Location = new System.Drawing.Point(12, 34);
             this.user_data.Multiline = true;
             this.user_data.Name = "user_data";
             this.user_data.ReadOnly = true;
-            this.user_data.Size = new System.Drawing.Size(208, 260);
+            this.user_data.Size = new System.Drawing.Size(208, 238);
             this.user_data.TabIndex = 1;
             // 
-            // book_data
+            // book_data1
             // 
-            this.book_data.Library = null;
-            this.book_data.Location = new System.Drawing.Point(226, 12);
-            this.book_data.Multiline = true;
-            this.book_data.Name = "book_data";
-            this.book_data.ReadOnly = true;
-            this.book_data.Size = new System.Drawing.Size(208, 260);
-            this.book_data.TabIndex = 2;
+            this.book_data1.Library = null;
+            this.book_data1.Location = new System.Drawing.Point(0, 0);
+            this.book_data1.Multiline = true;
+            this.book_data1.Name = "book_data1";
+            this.book_data1.ReadOnly = true;
+            this.book_data1.Size = new System.Drawing.Size(208, 238);
+            this.book_data1.TabIndex = 2;
             // 
             // borrow
             // 
-            this.borrow.Location = new System.Drawing.Point(440, 12);
+            this.borrow.Location = new System.Drawing.Point(449, 34);
             this.borrow.Name = "borrow";
             this.borrow.Size = new System.Drawing.Size(164, 38);
             this.borrow.TabIndex = 3;
@@ -88,7 +98,7 @@
             // 
             // give_back
             // 
-            this.give_back.Location = new System.Drawing.Point(440, 56);
+            this.give_back.Location = new System.Drawing.Point(449, 78);
             this.give_back.Name = "give_back";
             this.give_back.Size = new System.Drawing.Size(162, 36);
             this.give_back.TabIndex = 3;
@@ -98,7 +108,7 @@
             // 
             // add_day
             // 
-            this.add_day.Location = new System.Drawing.Point(440, 236);
+            this.add_day.Location = new System.Drawing.Point(449, 236);
             this.add_day.Name = "add_day";
             this.add_day.Size = new System.Drawing.Size(162, 36);
             this.add_day.TabIndex = 3;
@@ -108,7 +118,7 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(440, 194);
+            this.Save.Location = new System.Drawing.Point(449, 194);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(162, 36);
             this.Save.TabIndex = 3;
@@ -116,18 +126,89 @@
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.ClickSave);
             // 
+            // book_tab
+            // 
+            this.book_tab.Controls.Add(this.page1);
+            this.book_tab.Controls.Add(this.page2);
+            this.book_tab.Controls.Add(this.page3);
+            this.book_tab.Location = new System.Drawing.Point(226, 11);
+            this.book_tab.Name = "book_tab";
+            this.book_tab.SelectedIndex = 0;
+            this.book_tab.Size = new System.Drawing.Size(216, 264);
+            this.book_tab.TabIndex = 4;
+            // 
+            // page1
+            // 
+            this.page1.Controls.Add(this.book_data1);
+            this.page1.Location = new System.Drawing.Point(4, 22);
+            this.page1.Name = "page1";
+            this.page1.Padding = new System.Windows.Forms.Padding(3);
+            this.page1.Size = new System.Drawing.Size(208, 238);
+            this.page1.TabIndex = 0;
+            this.page1.Text = "1";
+            this.page1.UseVisualStyleBackColor = true;
+            // 
+            // page2
+            // 
+            this.page2.Controls.Add(this.book_data2);
+            this.page2.Location = new System.Drawing.Point(4, 22);
+            this.page2.Name = "page2";
+            this.page2.Padding = new System.Windows.Forms.Padding(3);
+            this.page2.Size = new System.Drawing.Size(209, 242);
+            this.page2.TabIndex = 1;
+            this.page2.Text = "2";
+            this.page2.UseVisualStyleBackColor = true;
+            // 
+            // book_data2
+            // 
+            this.book_data2.Library = null;
+            this.book_data2.Location = new System.Drawing.Point(0, 0);
+            this.book_data2.Multiline = true;
+            this.book_data2.Name = "book_data2";
+            this.book_data2.ReadOnly = true;
+            this.book_data2.Size = new System.Drawing.Size(208, 238);
+            this.book_data2.TabIndex = 3;
+            // 
+            // page3
+            // 
+            this.page3.Controls.Add(this.book_data3);
+            this.page3.Location = new System.Drawing.Point(4, 22);
+            this.page3.Name = "page3";
+            this.page3.Padding = new System.Windows.Forms.Padding(3);
+            this.page3.Size = new System.Drawing.Size(209, 242);
+            this.page3.TabIndex = 2;
+            this.page3.Text = "3";
+            this.page3.UseVisualStyleBackColor = true;
+            // 
+            // book_data3
+            // 
+            this.book_data3.Library = null;
+            this.book_data3.Location = new System.Drawing.Point(0, 0);
+            this.book_data3.Multiline = true;
+            this.book_data3.Name = "book_data3";
+            this.book_data3.ReadOnly = true;
+            this.book_data3.Size = new System.Drawing.Size(208, 238);
+            this.book_data3.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(669, 409);
+            this.Controls.Add(this.book_tab);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.add_day);
             this.Controls.Add(this.give_back);
             this.Controls.Add(this.borrow);
-            this.Controls.Add(this.book_data);
             this.Controls.Add(this.user_data);
             this.Controls.Add(this.book_barcode);
             this.Controls.Add(this.user_barcode);
             this.Name = "MainForm";
+            this.book_tab.ResumeLayout(false);
+            this.page1.ResumeLayout(false);
+            this.page1.PerformLayout();
+            this.page2.ResumeLayout(false);
+            this.page2.PerformLayout();
+            this.page3.ResumeLayout(false);
+            this.page3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,11 +219,17 @@
         private Controls.BarcodeScanner user_barcode;
         private Controls.BarcodeScanner book_barcode;
         private Controls.UserDataSheet user_data;
-        private Controls.BookDataSheet book_data;
+        private Controls.BookDataSheet book_data1;
         private System.Windows.Forms.Button borrow;
         private System.Windows.Forms.Button give_back;
         private System.Windows.Forms.Button add_day;
         private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.TabControl book_tab;
+        private System.Windows.Forms.TabPage page1;
+        private System.Windows.Forms.TabPage page2;
+        private System.Windows.Forms.TabPage page3;
+        private Controls.BookDataSheet book_data2;
+        private Controls.BookDataSheet book_data3;
     }
 }
 

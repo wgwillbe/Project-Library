@@ -18,7 +18,7 @@ namespace Library
             MaxBooks = 3,
         };
         private Classes.User user;
-        private Classes.Book book;
+        private List<Classes.Book> books;
 
         public MainForm()
         {
@@ -31,49 +31,133 @@ namespace Library
             this.Height = 600;
             this.MaximizeBox = false;
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            this.user = null;
+            this.books = new List<Classes.Book>();
+
+            this.book_data1.Library = this.library;
+            this.book_data2.Library = this.library;
+            this.book_data3.Library = this.library;
+            this.user_data.Library = this.library;
         }
 
         private void ChangeBookBarcode(object sender, EventArgs e)
         {
-            this.book_data.Library = this.library;
-            this.book_data.FindBook((sender as RichTextBox).Text);
+            switch (this.books.Count)
+            {
+                case 0: this.book_data1.FindBook((sender as RichTextBox).Text); break;
+                case 1: this.book_data2.FindBook((sender as RichTextBox).Text); break;
+                case 2: this.book_data3.FindBook((sender as RichTextBox).Text); break;
+                default: break;
+            }
 
-            this.book = this.library.FindBook((sender as RichTextBox).Text);
+            Classes.Book find = this.library.FindBook((sender as RichTextBox).Text);
+
+            if (find != null)
+            {
+                this.books.Add(find);
+                (sender as RichTextBox).Text = "";
+            }
         }
 
         private void ChangeUserBarcode(object sender, EventArgs e)
         {
-            this.user_data.Library = this.library;
             this.user_data.FindUser((sender as RichTextBox).Text);
 
-            this.user = this.library.FindUser((sender as RichTextBox).Text);
+            Classes.User find = this.library.FindUser((sender as RichTextBox).Text);
+
+            if (find != null)
+            {
+                this.user = find;
+                (sender as RichTextBox).Text = "";
+            }
         }
 
         private void ClickAddDay(object sender, EventArgs e)
         {
             this.library.AddDay();
 
-            ChangeBookBarcode(this.book_barcode, e);
-            ChangeUserBarcode(this.user_barcode, e);
+            this.user_data.FindUser(this.user.Barcode);
+
+            if (this.books.Count > 0)
+            {
+                this.book_data1.FindBook(this.books[0].Barcode);
+            }
+            if (this.books.Count > 1)
+            {
+                this.book_data2.FindBook(this.books[1].Barcode);
+            }
+            if (this.books.Count > 2)
+            {
+                this.book_data3.FindBook(this.books[2].Barcode);
+            }
         }
 
         private void ClickBorrow(object sender, EventArgs e)
         {
-            if (!this.library.Borrow(this.user, this.book))
+            for (int i = 0; i < this.books.Count; i++)
             {
-                MessageBox.Show("대출에 실패했습니다.");
+                if (!this.library.Borrow(this.user, this.books[i]))
+                {
+                    MessageBox.Show("대출에 실패했습니다.");
+
+                    return;
+                }
             }
-        
-            ChangeBookBarcode(this.book_barcode, e);
-            ChangeUserBarcode(this.user_barcode, e);
+
+            this.user_data.FindUser(this.user.Barcode); 
+
+            if (this.books.Count > 0)
+            {
+                this.book_data1.FindBook(this.books[0].Barcode);
+            }
+            if (this.books.Count > 1)
+            {
+                this.book_data2.FindBook(this.books[1].Barcode);
+            }
+            if (this.books.Count > 2)
+            {
+                this.book_data3.FindBook(this.books[2].Barcode);
+            }
+
+            this.user_data.Text = "";
+            this.book_data1.Text = "";
+            this.book_data2.Text = "";
+            this.book_data3.Text = "";
+
+            this.user = null;
+            this.books = new List<Classes.Book>();
         }
 
         private void ClickGiveBack(object sender, EventArgs e)
         {
-            this.library.GiveBack(this.user, this.book);
+            for (int i = 0; i < this.books.Count; i++)
+            {
+                this.library.GiveBack(this.user, this.books[i]);
+            }
 
-            ChangeBookBarcode(this.book_barcode, e);
-            ChangeUserBarcode(this.user_barcode, e);
+            this.user_data.FindUser(this.user.Barcode);
+
+            if (this.books.Count > 0)
+            {
+                this.book_data1.FindBook(this.books[0].Barcode);
+            }
+            if (this.books.Count > 1)
+            {
+                this.book_data2.FindBook(this.books[1].Barcode);
+            }
+            if (this.books.Count > 2)
+            {
+                this.book_data3.FindBook(this.books[2].Barcode);
+            }
+
+            this.user_data.Text = "";
+            this.book_data1.Text = "";
+            this.book_data2.Text = "";
+            this.book_data3.Text = "";
+
+            this.user = null;
+            this.books = new List<Classes.Book>();
         }
 
         private void ClickSave(object sender, EventArgs e)
