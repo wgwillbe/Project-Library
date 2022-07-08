@@ -43,6 +43,7 @@
             this.page3 = new System.Windows.Forms.TabPage();
             this.book_data3 = new Library.Controls.BookDataSheet();
             this.label = new System.Windows.Forms.Label();
+            this.reset_book_data = new System.Windows.Forms.Button();
             this.book_tab.SuspendLayout();
             this.page1.SuspendLayout();
             this.page2.SuspendLayout();
@@ -89,7 +90,7 @@
             // 
             // borrow
             // 
-            this.borrow.Location = new System.Drawing.Point(444, 34);
+            this.borrow.Location = new System.Drawing.Point(444, 79);
             this.borrow.Name = "borrow";
             this.borrow.Size = new System.Drawing.Size(163, 38);
             this.borrow.TabIndex = 3;
@@ -99,7 +100,7 @@
             // 
             // give_back
             // 
-            this.give_back.Location = new System.Drawing.Point(444, 78);
+            this.give_back.Location = new System.Drawing.Point(444, 123);
             this.give_back.Name = "give_back";
             this.give_back.Size = new System.Drawing.Size(163, 36);
             this.give_back.TabIndex = 3;
@@ -200,9 +201,20 @@
             this.label.TabIndex = 5;
             this.label.Text = "이용자";
             // 
+            // reset_book_data
+            // 
+            this.reset_book_data.Location = new System.Drawing.Point(444, 35);
+            this.reset_book_data.Name = "reset_book_data";
+            this.reset_book_data.Size = new System.Drawing.Size(163, 38);
+            this.reset_book_data.TabIndex = 6;
+            this.reset_book_data.Text = "도서 정보 초기화";
+            this.reset_book_data.UseVisualStyleBackColor = true;
+            this.reset_book_data.Click += new System.EventHandler(this.ClickResetBook);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(619, 327);
+            this.Controls.Add(this.reset_book_data);
             this.Controls.Add(this.label);
             this.Controls.Add(this.book_tab);
             this.Controls.Add(this.Save);
@@ -243,6 +255,7 @@
         private Controls.BookDataSheet book_data2;
         private Controls.BookDataSheet book_data3;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button reset_book_data;
     }
 }
 

@@ -164,5 +164,14 @@ namespace Library
         {
             this.library.SaveData();
         }
+
+        private void ClickResetBook(object sender, EventArgs e)
+        {
+            this.book_data1.Text = "";
+            this.book_data2.Text = "";
+            this.book_data3.Text = "";
+
+            this.books = new List<Classes.Book>();
+        }
     }
 }
