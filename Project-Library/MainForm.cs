@@ -27,8 +27,8 @@ namespace Library
             this.Icon = Properties.Resources.OpenBook;
             this.Text = "내 손으로 코딩하는 작은 도서관";
             this.Font = new Font("Verdana", 11, FontStyle.Regular);
-            this.Width = 800;
-            this.Height = 600;
+            this.Width = 635;
+            this.Height = 366;
             this.MaximizeBox = false;
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 

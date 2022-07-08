@@ -42,6 +42,7 @@
             this.book_data2 = new Library.Controls.BookDataSheet();
             this.page3 = new System.Windows.Forms.TabPage();
             this.book_data3 = new Library.Controls.BookDataSheet();
+            this.label = new System.Windows.Forms.Label();
             this.book_tab.SuspendLayout();
             this.page1.SuspendLayout();
             this.page2.SuspendLayout();
@@ -50,7 +51,7 @@
             // 
             // user_barcode
             // 
-            this.user_barcode.Location = new System.Drawing.Point(12, 328);
+            this.user_barcode.Location = new System.Drawing.Point(12, 281);
             this.user_barcode.Name = "user_barcode";
             this.user_barcode.Size = new System.Drawing.Size(208, 31);
             this.user_barcode.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             // book_barcode
             // 
-            this.book_barcode.Location = new System.Drawing.Point(226, 328);
+            this.book_barcode.Location = new System.Drawing.Point(230, 281);
             this.book_barcode.Name = "book_barcode";
             this.book_barcode.Size = new System.Drawing.Size(208, 31);
             this.book_barcode.TabIndex = 0;
@@ -69,7 +70,7 @@
             // user_data
             // 
             this.user_data.Library = null;
-            this.user_data.Location = new System.Drawing.Point(12, 34);
+            this.user_data.Location = new System.Drawing.Point(12, 37);
             this.user_data.Multiline = true;
             this.user_data.Name = "user_data";
             this.user_data.ReadOnly = true;
@@ -88,9 +89,9 @@
             // 
             // borrow
             // 
-            this.borrow.Location = new System.Drawing.Point(449, 34);
+            this.borrow.Location = new System.Drawing.Point(444, 34);
             this.borrow.Name = "borrow";
-            this.borrow.Size = new System.Drawing.Size(164, 38);
+            this.borrow.Size = new System.Drawing.Size(163, 38);
             this.borrow.TabIndex = 3;
             this.borrow.Text = "대출";
             this.borrow.UseVisualStyleBackColor = true;
@@ -98,9 +99,9 @@
             // 
             // give_back
             // 
-            this.give_back.Location = new System.Drawing.Point(449, 78);
+            this.give_back.Location = new System.Drawing.Point(444, 78);
             this.give_back.Name = "give_back";
-            this.give_back.Size = new System.Drawing.Size(162, 36);
+            this.give_back.Size = new System.Drawing.Size(163, 36);
             this.give_back.TabIndex = 3;
             this.give_back.Text = "반납";
             this.give_back.UseVisualStyleBackColor = true;
@@ -108,9 +109,9 @@
             // 
             // add_day
             // 
-            this.add_day.Location = new System.Drawing.Point(449, 236);
+            this.add_day.Location = new System.Drawing.Point(444, 236);
             this.add_day.Name = "add_day";
-            this.add_day.Size = new System.Drawing.Size(162, 36);
+            this.add_day.Size = new System.Drawing.Size(163, 36);
             this.add_day.TabIndex = 3;
             this.add_day.Text = "날짜+";
             this.add_day.UseVisualStyleBackColor = true;
@@ -118,9 +119,9 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(449, 194);
+            this.Save.Location = new System.Drawing.Point(444, 194);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(162, 36);
+            this.Save.Size = new System.Drawing.Size(163, 36);
             this.Save.TabIndex = 3;
             this.Save.Text = "저장";
             this.Save.UseVisualStyleBackColor = true;
@@ -131,32 +132,32 @@
             this.book_tab.Controls.Add(this.page1);
             this.book_tab.Controls.Add(this.page2);
             this.book_tab.Controls.Add(this.page3);
-            this.book_tab.Location = new System.Drawing.Point(226, 11);
+            this.book_tab.Location = new System.Drawing.Point(226, 10);
             this.book_tab.Name = "book_tab";
             this.book_tab.SelectedIndex = 0;
-            this.book_tab.Size = new System.Drawing.Size(216, 264);
+            this.book_tab.Size = new System.Drawing.Size(216, 269);
             this.book_tab.TabIndex = 4;
             // 
             // page1
             // 
             this.page1.Controls.Add(this.book_data1);
-            this.page1.Location = new System.Drawing.Point(4, 22);
+            this.page1.Location = new System.Drawing.Point(4, 25);
             this.page1.Name = "page1";
             this.page1.Padding = new System.Windows.Forms.Padding(3);
-            this.page1.Size = new System.Drawing.Size(208, 238);
+            this.page1.Size = new System.Drawing.Size(208, 240);
             this.page1.TabIndex = 0;
-            this.page1.Text = "1";
+            this.page1.Text = "도서 1";
             this.page1.UseVisualStyleBackColor = true;
             // 
             // page2
             // 
             this.page2.Controls.Add(this.book_data2);
-            this.page2.Location = new System.Drawing.Point(4, 22);
+            this.page2.Location = new System.Drawing.Point(4, 25);
             this.page2.Name = "page2";
             this.page2.Padding = new System.Windows.Forms.Padding(3);
-            this.page2.Size = new System.Drawing.Size(209, 242);
+            this.page2.Size = new System.Drawing.Size(208, 236);
             this.page2.TabIndex = 1;
-            this.page2.Text = "2";
+            this.page2.Text = "도서 2";
             this.page2.UseVisualStyleBackColor = true;
             // 
             // book_data2
@@ -172,12 +173,12 @@
             // page3
             // 
             this.page3.Controls.Add(this.book_data3);
-            this.page3.Location = new System.Drawing.Point(4, 22);
+            this.page3.Location = new System.Drawing.Point(4, 25);
             this.page3.Name = "page3";
             this.page3.Padding = new System.Windows.Forms.Padding(3);
-            this.page3.Size = new System.Drawing.Size(209, 242);
+            this.page3.Size = new System.Drawing.Size(208, 236);
             this.page3.TabIndex = 2;
-            this.page3.Text = "3";
+            this.page3.Text = "도서 3";
             this.page3.UseVisualStyleBackColor = true;
             // 
             // book_data3
@@ -190,9 +191,19 @@
             this.book_data3.Size = new System.Drawing.Size(208, 238);
             this.book_data3.TabIndex = 3;
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(12, 19);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(52, 15);
+            this.label.TabIndex = 5;
+            this.label.Text = "이용자";
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(669, 409);
+            this.ClientSize = new System.Drawing.Size(619, 327);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.book_tab);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.add_day);
@@ -201,6 +212,7 @@
             this.Controls.Add(this.user_data);
             this.Controls.Add(this.book_barcode);
             this.Controls.Add(this.user_barcode);
+            this.Font = new System.Drawing.Font("굴림", 11F);
             this.Name = "MainForm";
             this.book_tab.ResumeLayout(false);
             this.page1.ResumeLayout(false);
@@ -230,6 +242,7 @@
         private System.Windows.Forms.TabPage page3;
         private Controls.BookDataSheet book_data2;
         private Controls.BookDataSheet book_data3;
+        private System.Windows.Forms.Label label;
     }
 }
 
