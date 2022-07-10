@@ -120,7 +120,6 @@ namespace Library
                 this.book_data3.FindBook(this.books[2].Barcode);
             }
 
-            this.user_data.Text = "";
             this.book_data1.Text = "";
             this.book_data2.Text = "";
             this.book_data3.Text = "";
@@ -151,7 +150,6 @@ namespace Library
                 this.book_data3.FindBook(this.books[2].Barcode);
             }
 
-            this.user_data.Text = "";
             this.book_data1.Text = "";
             this.book_data2.Text = "";
             this.book_data3.Text = "";
