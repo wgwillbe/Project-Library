@@ -133,7 +133,7 @@
             this.book_tab.Controls.Add(this.page1);
             this.book_tab.Controls.Add(this.page2);
             this.book_tab.Controls.Add(this.page3);
-            this.book_tab.Location = new System.Drawing.Point(226, 10);
+            this.book_tab.Location = new System.Drawing.Point(226, 11);
             this.book_tab.Name = "book_tab";
             this.book_tab.SelectedIndex = 0;
             this.book_tab.Size = new System.Drawing.Size(216, 269);
@@ -153,10 +153,10 @@
             // page2
             // 
             this.page2.Controls.Add(this.book_data2);
-            this.page2.Location = new System.Drawing.Point(4, 25);
+            this.page2.Location = new System.Drawing.Point(4, 22);
             this.page2.Name = "page2";
             this.page2.Padding = new System.Windows.Forms.Padding(3);
-            this.page2.Size = new System.Drawing.Size(208, 236);
+            this.page2.Size = new System.Drawing.Size(208, 243);
             this.page2.TabIndex = 1;
             this.page2.Text = "도서 2";
             this.page2.UseVisualStyleBackColor = true;
@@ -174,10 +174,10 @@
             // page3
             // 
             this.page3.Controls.Add(this.book_data3);
-            this.page3.Location = new System.Drawing.Point(4, 25);
+            this.page3.Location = new System.Drawing.Point(4, 22);
             this.page3.Name = "page3";
             this.page3.Padding = new System.Windows.Forms.Padding(3);
-            this.page3.Size = new System.Drawing.Size(208, 236);
+            this.page3.Size = new System.Drawing.Size(208, 243);
             this.page3.TabIndex = 2;
             this.page3.Text = "도서 3";
             this.page3.UseVisualStyleBackColor = true;

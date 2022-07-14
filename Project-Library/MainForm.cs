@@ -45,18 +45,29 @@ namespace Library
         {
             switch (this.books.Count)
             {
-                case 0: this.book_data1.FindBook((sender as RichTextBox).Text); break;
-                case 1: this.book_data2.FindBook((sender as RichTextBox).Text); break;
-                case 2: this.book_data3.FindBook((sender as RichTextBox).Text); break;
-                default: break;
+                case 0: 
+                    this.book_data1.FindBook((sender as RichTextBox).Text);
+                    break;
+                case 1: 
+                    this.book_data2.FindBook((sender as RichTextBox).Text);
+                    break;
+                case 2:
+                    this.book_data3.FindBook((sender as RichTextBox).Text);
+                    break;
+                default: 
+                    break;
             }
 
             Classes.Book find = this.library.FindBook((sender as RichTextBox).Text);
 
             if (find != null)
             {
-                this.books.Add(find);
                 (sender as RichTextBox).Text = "";
+
+                this.books.Add(find);
+                this.book_tab.SelectedTab = this.book_tab.TabPages[this.books.Count - 1];
+
+                this.book_barcode.Focus();
             }
         }
 
@@ -68,8 +79,11 @@ namespace Library
 
             if (find != null)
             {
-                this.user = find;
                 (sender as RichTextBox).Text = "";
+
+                this.user = find;
+
+                this.user_barcode.Focus();
             }
         }
 
@@ -77,7 +91,10 @@ namespace Library
         {
             this.library.AddDay();
 
-            this.user_data.FindUser(this.user.Barcode);
+            if (this.user != null)
+            {
+                this.user_data.FindUser(this.user.Barcode);
+            }
 
             if (this.books.Count > 0)
             {
@@ -124,7 +141,6 @@ namespace Library
             this.book_data2.Text = "";
             this.book_data3.Text = "";
 
-            this.user = null;
             this.books = new List<Classes.Book>();
         }
 
@@ -154,7 +170,6 @@ namespace Library
             this.book_data2.Text = "";
             this.book_data3.Text = "";
 
-            this.user = null;
             this.books = new List<Classes.Book>();
         }
 
